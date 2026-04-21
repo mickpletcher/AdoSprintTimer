@@ -14,6 +14,7 @@ Rules for this folder:
 2. Do not include these files in any ordered prompt list.
 3. Do not update implementation behavior based on files here unless the parent prompt explicitly references them.
 4. Use these files only as supporting reference material.
+5. Do not treat compatibility filename aliases in the parent folder as workflow prompts either.
 
 Current intent:
 
@@ -21,3 +22,7 @@ Current intent:
 - `../05-Implement-Tasks.md` is the active implementation prompt.
 
 If you are following the GitHub Spec workflow for this repository, start from the prompts in the parent Prompts directory and ignore this folder unless you specifically need reference context.
+
+Related note:
+
+- Parent folder compatibility files such as `../Generate-Formal-Spec.md` exist to satisfy legacy path references and are not part of the ordered workflow.

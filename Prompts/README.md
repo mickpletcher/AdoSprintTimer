@@ -305,6 +305,17 @@ If the repository structure is already correct, start at step 2.
 3. `principles.md` constrains all generated and implemented work.
 4. Once requirements, spec, plan, and tasks exist, implementation should follow those files rather than improvising from the prompts.
 
+## Compatibility Filenames
+
+This directory may include compatibility prompt filenames for editor state or legacy links.
+
+Current compatibility file:
+
+- `Generate-Formal-Spec.md`
+
+Compatibility files are not part of the ordered prompt chain.
+For normal workflow execution, use the numbered prompt files.
+
 ## Reference Subdirectory
 
 The `reference/` subdirectory is not part of the active prompt chain.

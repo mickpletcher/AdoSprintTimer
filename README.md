@@ -44,8 +44,9 @@ At the moment, the repository contains:
 
 1. The root project documentation.
 2. A prompt workflow under [Prompts/README.md](Prompts/README.md).
-3. Prompt files for requirements, specification, planning, task generation, implementation, audit, fixes, and regression testing.
+3. Prompt files for requirements, specification, planning, task generation, implementation, audit, fixes, regression testing, release readiness, publishing, post-release monitoring, and system improvement.
 4. Shared engineering constraints in [Prompts/principles.md](Prompts/principles.md).
+5. A local-only planning folder [future-upgrades](future-upgrades) that is excluded from git push via [.gitignore](.gitignore).
 
 ## Repository Layout
 
@@ -57,6 +58,8 @@ Current top level contents:
    Prompt workflow used to generate and validate the module implementation.
 3. [LICENSE](LICENSE)
    Repository license.
+4. [future-upgrades](future-upgrades)
+   Local planning notes folder excluded from source control.
 
 Prompt workflow contents:
 
@@ -78,7 +81,17 @@ Prompt workflow contents:
    Applies targeted fixes from the audit.
 9. [Prompts/08-Regression-Test.md](Prompts/08-Regression-Test.md)
    Validates the implementation after fixes.
-10. [Prompts/principles.md](Prompts/principles.md)
+10. [Prompts/09-Release-Readiness.md](Prompts/09-Release-Readiness.md)
+   Validates production readiness before release.
+11. [Prompts/10-Publish-Module.md](Prompts/10-Publish-Module.md)
+   Guides packaging and publishing.
+12. [Prompts/11-Post-Release-Monitoring.md](Prompts/11-Post-Release-Monitoring.md)
+   Defines post-release operational monitoring.
+13. [Prompts/12-Auto-Improve-System.md](Prompts/12-Auto-Improve-System.md)
+   Improves the workflow based on outcomes over time.
+14. [Prompts/Generate-Formal-Spec.md](Prompts/Generate-Formal-Spec.md)
+   Compatibility prompt filename for legacy editor references.
+15. [Prompts/principles.md](Prompts/principles.md)
     Defines the engineering and safety constraints for all generated work.
 
 ## Spec Workflow
@@ -93,6 +106,10 @@ The intended project workflow is:
 6. Audit the result.
 7. Fix issues found in the audit.
 8. Run regression validation.
+9. Validate release readiness.
+10. Publish module artifacts.
+11. Monitor behavior post-release.
+12. Improve the prompt system based on observed outcomes.
 
 The generated artifacts should live under:
 
@@ -165,8 +182,9 @@ Project status right now:
 
 1. Repository prompt workflow is present.
 2. Root and prompt documentation are in place.
-3. The project is structured to drive implementation through generated spec artifacts.
+3. The full lifecycle prompt set is present through release and post-release operations.
 4. The actual module implementation should follow the prompt and spec workflow rather than being improvised directly.
+5. Compatibility prompt filenames are present for older path references.
 
 ## Getting Started
 
@@ -177,6 +195,7 @@ If you are working on this repository, start here:
 3. Generate or update the artifacts under `specs/001-ado-sprint-timer/`.
 4. Implement only from those generated artifacts.
 5. Run audit and regression prompts after implementation changes.
+6. Run release readiness and publish prompts only after regression passes.
 
 ## Long Term Direction
 
@@ -192,3 +211,7 @@ The long term direction for AdoSprintTimer includes:
 ## Summary
 
 AdoSprintTimer is a local first Azure DevOps sprint time tracking project with a PowerShell module target and a spec driven workflow. This repository currently documents and drives that implementation process through the prompt system under [Prompts](Prompts).
+
+Local planning note:
+
+- [future-upgrades](future-upgrades) is intentionally local-only and ignored by git.
